@@ -30,6 +30,7 @@
         <text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
         <text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
       </text:sequence-decls>
+<!-- page start -->
       <text:p text:style-name="P1">First line</text:p>
       <text:p text:style-name="P1">
       <!-- fixme calcualte WIDTH from height by its original ratio -->
@@ -39,7 +40,8 @@
       </draw:frame>
       </text:p>
       <text:p text:style-name="P1">Sescond line</text:p>
-      <text:p text:style-name="P2"/>
+      <text:p text:style-name="P2"/> <!-- page break-->
+<!-- page end -->
     </office:text>
   </office:body>
 </office:document-content>
