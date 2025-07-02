@@ -18,7 +18,7 @@
       <style:text-properties fo:font-weight="normal" officeooo:rsid="0017e273" officeooo:paragraph-rsid="000e058d" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
     </style:style>
     <style:style style:name="fr1" style:family="graphic" style:parent-style-name="Graphics">
-      <style:graphic-properties style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="paragraph" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard" draw:wrap-influence-on-position="once-concurrent" loext:allow-overlap="true" loext:rel-width-rel="paragraph"/>
+      <style:graphic-properties style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="paragraph" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard" draw:wrap-influence-on-position="once-concurrent" loext:allow-overlap="true" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
     </style:style>
   </office:automatic-styles>
   <office:body>
@@ -31,12 +31,13 @@
         <text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
       </text:sequence-decls>
       <text:p text:style-name="P1">First line</text:p>
-      <text:p text:style-name="P1">
-        <draw:frame draw:style-name="fr1" draw:name="Image1" text:anchor-type="char" svg:x="0.049cm" svg:y="0cm" svg:width="16.15cm" style:rel-width="95%" svg:height="24.231cm" style:rel-height="scale" draw:z-index="0">
-          <draw:image xlink:href="Pictures/1000000000000294000003DE76F56832.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" draw:mime-type="image/png"/>
-        </draw:frame>
+      <text:p text:style-name="P1"><!-- fixme calcualte HEIGHT from width by its original ratio -->
+      <!-- so eg if width:height was 1:2 and final height will be 90% then the width will be 45 -->
+      <draw:frame draw:style-name="fr1" draw:name="Image1" text:anchor-type="char" svg:x="0cm" svg:y="0cm"  style:rel-width="45%" style:rel-height="90%"  draw:z-index="0">
+        <draw:image xlink:href="Pictures/1000000000000294000003DE76F56832.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" draw:mime-type="image/png"/>
+      </draw:frame>
       </text:p>
-      <text:p text:style-name="P1">asas</text:p>
+      <text:p text:style-name="P1">Sescond line</text:p>
       <text:p text:style-name="P2"/>
     </office:text>
   </office:body>
