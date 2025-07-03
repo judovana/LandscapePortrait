@@ -119,17 +119,19 @@ public class TemplatedDocument {
                 replace("Sescond line", image.getPath().getName()).
                 replaceAll("--abs", "--abs of " + image.getWidth()+" x " + image.getHeight());
         if (id.equals("portrait")) {
-            int h = 90;
+            //max width 17 max height 24
+            int h = 18;
             int w = (int) ((double) h * image.getPortraitRatio());
             System.out.println(image.getPath() + "  " + h + "   " + w);
-            r = r.replace("style:rel-width=\"45", "style:rel-width=\"" + w);
-            r = r.replace("style:rel-height=\"90", "style:rel-height=\"" + h);
+            r = r.replace("svg:width=\"10", "svg:width=\"" + w);
+            r = r.replace("svg:height=\"21", "svg:height=\"" + h);
         } else if (id.equals("landscape")) {
-            int w = 90;
+            //max width 26 max height 15
+            int w = 18;
             int h = (int) ((double) w * image.getLandscapeRatio());
             System.out.println(image.getPath() + "  " + h + "   " + w);
-            r = r.replace("style:rel-height=\"45", "style:rel-height=\"" + h);
-            r = r.replace("style:rel-width=\"90", "style:rel-width=\"" + w);
+            r = r.replace("svg:height=\"10", "svg:height=\"" + h);
+            r = r.replace("svg:width=\"21", "svg:width=\"" + w);
         } else {
             throw new RuntimeException("unknown orientation " + id);
         }
