@@ -120,15 +120,23 @@ public class TemplatedDocument {
                 replaceAll("--abs", "--abs of " + image.getWidth()+" x " + image.getHeight());
         if (id.equals("portrait")) {
             //max width 17 max height 24
-            int h = 18;
+            int h = 23;
             int w = (int) ((double) h * image.getPortraitRatio());
+            if (w > 17) {
+                w = 17;
+                h = (int) ((double) w * image.getLandscapeRatio());
+            }
             System.out.println(image.getPath() + "  " + h + "   " + w);
             r = r.replace("svg:width=\"10", "svg:width=\"" + w);
             r = r.replace("svg:height=\"21", "svg:height=\"" + h);
         } else if (id.equals("landscape")) {
             //max width 26 max height 15
-            int w = 18;
+            int w = 26;
             int h = (int) ((double) w * image.getLandscapeRatio());
+            if (h>15){
+                h = 15;
+                w = (int) ((double) h * image.getPortraitRatio());
+            }
             System.out.println(image.getPath() + "  " + h + "   " + w);
             r = r.replace("svg:height=\"10", "svg:height=\"" + h);
             r = r.replace("svg:width=\"21", "svg:width=\"" + w);
