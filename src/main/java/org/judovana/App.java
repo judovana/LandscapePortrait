@@ -3,7 +3,7 @@ package org.judovana;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -15,7 +15,7 @@ public class App {
     private final TemplatedDocument landscape;
 
     public static void main(String[] args) throws IOException {
-        new App().work();
+        new App().work(args);
     }
 
     public App() throws IOException {
@@ -23,8 +23,8 @@ public class App {
         landscape = new TemplatedDocument("landscape");
     }
 
-    public void work() throws IOException {
-        List<String> all = Files.readAllLines(new File("imagesToTryInOfficeGenerator").toPath());
+    public void work(String... args) throws IOException {
+        List<String> all = Arrays.asList(args);
         int i = 0;
         int e = 0;
         int l = 0;
