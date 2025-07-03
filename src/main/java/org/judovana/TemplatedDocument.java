@@ -44,8 +44,16 @@ public class TemplatedDocument {
     }
 
 
-    public void add(String path, int width, int height) {
-        images.add(new ImageWrapper(new File(path), width, height));
+    public ImageWrapper add(String path, int width, int height) {
+        ImageWrapper i = new ImageWrapper(new File(path), width, height);
+        images.add(i);
+        return i;
+    }
+
+    private static void printRatios(ImageWrapper i) {
+        System.out.println(i.getWidth() + " x " + i.getHeight());
+        System.out.println(i.getLandscapeRatio());
+        System.out.println(i.getPortraitRatio());
     }
 
     public void generate() throws IOException {
@@ -105,11 +113,27 @@ public class TemplatedDocument {
     }
 
     private String getPage(ImageWrapper image) {
-        return pageTemplate.
+        String r = pageTemplate.
                 replace("${IMAGE_NAME}", image.getPath().getName()).
                 replace("First line", image.getPath().getName()).
                 replace("Sescond line", image.getPath().getName()).
                 replaceAll("--abs", "--abs of " + image.getWidth()+" x " + image.getHeight());
+        if (id.equals("portrait")) {
+            int h = 90;
+            int w = (int) ((double) h * image.getPortraitRatio());
+            System.out.println(image.getPath() + "  " + h + "   " + w);
+            r = r.replace("style:rel-width=\"45", "style:rel-width=\"" + w);
+            r = r.replace("style:rel-height=\"90", "style:rel-height=\"" + h);
+        } else if (id.equals("landscape")) {
+            int w = 90;
+            int h = (int) ((double) w * image.getLandscapeRatio());
+            System.out.println(image.getPath() + "  " + h + "   " + w);
+            r = r.replace("style:rel-height=\"45", "style:rel-height=\"" + h);
+            r = r.replace("style:rel-width=\"90", "style:rel-width=\"" + w);
+        } else {
+            throw new RuntimeException("unknown orientation " + id);
+        }
+        return r;
     }
 }
 

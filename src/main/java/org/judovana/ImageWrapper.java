@@ -13,6 +13,15 @@ public class ImageWrapper {
         this.height = height;
     }
 
+    public double getLandscapeRatio() {
+        return (double)height/(double)width;
+    }
+
+
+    public double getPortraitRatio() {
+        return (double)width/(double)height;
+    }
+
     public int getHeight() {
         return height;
     }
