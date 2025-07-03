@@ -30,19 +30,7 @@
         <text:sequence-decl text:display-outline-level="0" text:name="Drawing"/>
         <text:sequence-decl text:display-outline-level="0" text:name="Figure"/>
       </text:sequence-decls>
-<!-- page start -->
-      <text:p text:style-name="P1">First line</text:p>
-      <text:p text:style-name="P1">
-      <!-- fixme calcualte HEIGHT from width by its original ratio -->
-      <!-- so eg if width:height was 1:2 and final height will be 90% then the width will be 45 -->
-      <draw:frame draw:style-name="fr1" draw:name="Image1" text:anchor-type="char" svg:x="0cm" svg:y="0cm" style:rel-width="45%" style:rel-height="90%" draw:z-index="0">
-      <!--abs can be set as svg:width="17cm" svg:height="12.749cm", but not sure how to calc cm x px?  37px == 1cm on dpi of 96 so parametrized?-->
-        <draw:image xlink:href="Pictures/1000000000000294000003DE76F56832.png" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" draw:mime-type="image/png"/>
-      </draw:frame>
-      </text:p>
-      <text:p text:style-name="P1">Sescond line</text:p>
-      <text:p text:style-name="P2"/> <!-- page break-->
-<!-- page end -->
+%{NEXT_PAGE}
     </office:text>
   </office:body>
 </office:document-content>
