@@ -1,11 +1,12 @@
 <!-- page start -->
-      <text:p text:style-name="P1">First line</text:p>
-      <text:p text:style-name="P1">
+      <text:p text:style-name="P1">${TEXT}</text:p>
+      <text:p text:style-name="P2">${TEXT}</text:p>
+      <text:p text:style-name="P2">
       <draw:frame draw:style-name="fr1" draw:name="Image1" text:anchor-type="char" svg:x="0cm" svg:y="0cm" svg:width="21cm" svg:height="10cm" draw:z-index="0">
       <!--how to keep original size, if it is smaller?  how to calc cm x px?  37px == 1cm on dpi of 96 so parametrized?-->
         <draw:image xlink:href="Pictures/${IMAGE_NAME}" xlink:type="simple" xlink:show="embed" xlink:actuate="onLoad" draw:mime-type="image/jpeg"/>
       </draw:frame>
-      </text:p>
-      <text:p text:style-name="P1">Sescond line</text:p>
-      <text:p text:style-name="P2"/> <!-- page break-->
+      <text:s/>${TEXT}</text:p>
+      <text:p text:style-name="P1">${TEXT}</text:p>
+      <text:p text:style-name="P3"/> <!-- page break-->
 <!-- page end -->

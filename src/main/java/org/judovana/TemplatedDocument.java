@@ -115,12 +115,11 @@ public class TemplatedDocument {
     private String getPage(ImageWrapper image) {
         String r = pageTemplate.
                 replace("${IMAGE_NAME}", image.getPath().getName()).
-                replace("First line", image.getPath().getName()).
-                replace("Sescond line", image.getPath().getName()).
+                replace("${TEXT}", image.getPath().getName()).
                 replaceAll("--abs", "--abs of " + image.getWidth()+" x " + image.getHeight());
         if (id.equals("portrait")) {
             //max width 17 max height 24
-            int h = 23;
+            int h = 22;
             int w = (int) ((double) h * image.getPortraitRatio());
             if (w > 17) {
                 w = 17;
@@ -133,8 +132,8 @@ public class TemplatedDocument {
             //max width 26 max height 15
             int w = 26;
             int h = (int) ((double) w * image.getLandscapeRatio());
-            if (h>15){
-                h = 15;
+            if (h>14){
+                h = 14;
                 w = (int) ((double) h * image.getPortraitRatio());
             }
             System.out.println(image.getPath() + "  " + h + "   " + w);
