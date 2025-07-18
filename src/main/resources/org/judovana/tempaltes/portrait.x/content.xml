@@ -11,11 +11,11 @@
   </office:font-face-decls>
   <office:automatic-styles>
     <style:style style:name="P1" style:family="paragraph" style:parent-style-name="Standard">
-      <style:text-properties fo:font-weight="normal" officeooo:rsid="0017e273" officeooo:paragraph-rsid="000e058d" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+      <style:text-properties fo:font-weight="normal" officeooo:rsid="0017e273" officeooo:paragraph-rsid="0017e273" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
     </style:style>
     <style:style style:name="P2" style:family="paragraph" style:parent-style-name="Standard">
       <style:paragraph-properties fo:break-before="page"/>
-      <style:text-properties fo:font-weight="normal" officeooo:rsid="0017e273" officeooo:paragraph-rsid="000e058d" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+      <style:text-properties fo:font-weight="normal" officeooo:rsid="0017e273" officeooo:paragraph-rsid="0017e273" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
     </style:style>
     <style:style style:name="fr1" style:family="graphic" style:parent-style-name="Graphics">
       <style:graphic-properties style:wrap="none" style:vertical-pos="from-top" style:vertical-rel="paragraph" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" style:mirror="none" fo:clip="rect(0cm, 0cm, 0cm, 0cm)" draw:luminance="0%" draw:contrast="0%" draw:red="0%" draw:green="0%" draw:blue="0%" draw:gamma="100%" draw:color-inversion="false" draw:image-opacity="100%" draw:color-mode="standard" draw:wrap-influence-on-position="once-concurrent" loext:allow-overlap="true" loext:rel-width-rel="paragraph" loext:rel-height-rel="paragraph"/>
